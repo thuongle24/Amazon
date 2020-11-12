@@ -30,9 +30,9 @@ public class CheckNoOfItemsOnPage implements Task {
         for(int i=0; i<5;i++) {
             //Wait for the next button is actually visible
             actor.attemptsTo(Wait.until(
-                    WebElementQuestion.the(SearchResultPage.LASTPAGEBTN) , WebElementStateMatchers.isCurrentlyVisible())
+                    WebElementQuestion.the(SearchResultPage.NEXTBTN) , WebElementStateMatchers.isCurrentlyVisible())
                     .forNoLongerThan(Constant.TIMEOUT).seconds());
-            actor.attemptsTo(WaitAndClick.forElement(SearchResultPage.LASTPAGEBTN));
+            actor.attemptsTo(WaitAndClick.forElement(SearchResultPage.NEXTBTN));
             //Wait for the last list item loaded
             SearchResultPage.LASTLISTITEM.waitUntilVisible();
             actor.attemptsTo(Ensure.that(page.getTotalSearchItemOnPage().size()).isEqualTo(expectedItems));

@@ -1,5 +1,6 @@
 package automation.amazon.testcases.amazon;
 
+import automation.amazon.actions.SortResultsByInputOption;
 import automation.amazon.tasks.CheckNoOfItemsOnPage;
 import automation.amazon.tasks.CheckSortingByPublicationDate;
 import automation.amazon.testcases.Hook;
@@ -33,7 +34,8 @@ public class AmazonTCs extends Hook {
     public void User_only_see_16_result_items_per_page() {
         givenThat(anna).wasAbleTo(OpenTheApplication.with(url));
         //when(anna).attemptsTo(Login.withTheCredentials(username,password));
-        and(anna).attemptsTo(Search.forTheTerm("apple","Books"));
+        and(anna).attemptsTo(Search.forTheTerm("apple","Books"),
+                FilterByBookLanguage.forTheOption("English"));
         then(anna).attemptsTo(CheckNoOfItemsOnPage.is(16));
     }
     @Test
@@ -41,10 +43,9 @@ public class AmazonTCs extends Hook {
         givenThat(anna).wasAbleTo(OpenTheApplication.with(url));
         //when(anna).attemptsTo(Login.withTheCredentials(username,password));
         and(anna).attemptsTo(
-                Search.forTheTerm("apple","Books"));
-        then(anna).attemptsTo(
-                CheckSortingByPublicationDate.is(true));
-
-
+                Search.forTheTerm("apple","Books"),
+                FilterByBookLanguage.forTheOption("English"),
+                SortResultsByInputOption.by("Publication Date"));
+        then(anna).attemptsTo(CheckSortingByPublicationDate.is(true));
     }
 }

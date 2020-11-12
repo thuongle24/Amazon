@@ -48,7 +48,7 @@ public class WaitAndClick extends PageObject implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        System.out.print(timeout);
+        //System.out.print(timeout);
         if (by != null) {
             waitForCondition().withTimeout(
                     Duration.ofSeconds(timeout)).pollingEvery(Duration.ofSeconds(interval))

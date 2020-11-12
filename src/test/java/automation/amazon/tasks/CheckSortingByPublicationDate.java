@@ -5,6 +5,7 @@ import automation.amazon.ui.SearchResultPage;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.ensure.Ensure;
+import net.serenitybdd.screenplay.waits.Wait;
 import net.thucydides.core.annotations.Step;
 
 import java.text.ParseException;
@@ -23,10 +24,9 @@ public class CheckSortingByPublicationDate implements Task {
 
     @Step("{0} check the search results is sorted by #sortOption")
     public <T extends Actor> void performAs(T actor) {
-        isSorted=false;
+        isSorted=true;
         System.out.println("Items are Sorted by Publication date");
-        //Select sort option
-        actor.attemptsTo(SortResultsByInputOption.by("Publication Date"));
+        SearchResultPage.LASTLISTITEM.waitUntilVisible();
         //Get list is sorted
         try {
             isSorted=getListSorted();
@@ -46,12 +46,12 @@ public class CheckSortingByPublicationDate implements Task {
         date = page.getPubDateValue();
         System.out.println(date);
         Date date1 = formatter.parse(date);
-        System.out.println(date1);
+        //System.out.println(date1);
         Date date2 = formatter.parse(date);
-        System.out.println(date2);
+        //System.out.println(date2);
         //Get current List size value
         int totalitems = page.getPubDateList().size();
-        System.out.println(totalitems); ;
+        System.out.println(totalitems);
         //Start to compare the Publication Date of the 1st item with the 2nd one
         //If the 1st one >= the 2nd one, return true
         //Otherwise, return false

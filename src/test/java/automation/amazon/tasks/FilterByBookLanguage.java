@@ -22,7 +22,6 @@ public class FilterByBookLanguage implements Task {
         By element = By.xpath("//li[@aria-label='" + language + "']//input");
         Boolean itemChecked = SelectedStatus.of(element)
                 .viewedBy(actor).as(Boolean.class);
-        System.out.println(itemChecked);
         if(!itemChecked)
         {
                 actor.attemptsTo(Hit.the(Keys.SPACE).into(element));

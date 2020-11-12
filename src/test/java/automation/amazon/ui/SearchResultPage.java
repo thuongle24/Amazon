@@ -9,14 +9,14 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class SearchResultPage extends PageObject {
-    public static final By LASTPAGEBTN= By.cssSelector(".a-last");
-    public static final By SORTBYCOMBOX = By.xpath("//span[@class='a-dropdown-prompt']");
+    public static final By NEXTBTN= By.cssSelector(".a-last");
+    public static final By SORTBYCOMBOX = By.id("s-result-sort-select");
 
     @FindBy(xpath = "//div[@data-component-type='s-search-result'][15]//span[@class='a-size-base a-color-secondary a-text-normal']")
     public static WebElementFacade LASTLISTITEM;
 
     public List<String> getTotalSearchItemOnPage() {
-        return findAll("//span[@class = 'a-size-base a-color-secondary a-text-normal']").stream()
+        return findAll("//div[@data-component-type='s-search-result']").stream()
                 .map(WebElementFacade::getText).collect(Collectors.toList());
 
     }
