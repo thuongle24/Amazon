@@ -1,0 +1,28 @@
+{
+  "actors":[
+    {
+      "name": "thuong-dev",
+      "environment": "dev",
+      "username": "thuongl@joblogic.com",
+      "password": "1"
+    },
+    {
+      "name": "thuong-default",
+      "environment": "default",
+      "username": "thuongl@joblogic.com",
+      "password": "1"
+    },
+    {
+      "name": "thuong-uat",
+      "environment": "uat",
+      "username": "thuongl@joblogic.com",
+      "password": "123456"
+    },
+    {
+      "name": "thuong-live",
+      "environment": "live",
+      "username": "thuongl@joblogic.com",
+      "password": "1"
+    }
+  ]
+}
