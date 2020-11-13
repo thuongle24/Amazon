@@ -13,4 +13,5 @@
 ## 5. Running Your First Test
 - Before run, open the actor_info.json file under /resources/Json folder, input the credentials + environment (there is only one environment, so I put 'default')
 - Run the test in /NVG/Amazon/src/test/java/automation/amazon/testcases/amazon
+- See report in html in {machine_path}/Amazon/target/site/reports
 

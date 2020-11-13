@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="automation.amazon.testcases.amazon.AmazonTCs" skipped="0" tests="2" time="36.77" timestamp="2020-11-13 08:25:11"><testcase classname="automation.amazon.testcases.amazon.AmazonTCs" name="User able to sort results by publish date"><failure message="&#10;Expecting a value that is equal to: &lt;true&gt;&#10;But got...........................: &lt;false&gt;" type="java.lang.AssertionError">
+Expecting a value that is equal to: &lt;true&gt;
+But got...........................: &lt;false&gt;</failure><system-err>
+Expecting a value that is equal to: &lt;true&gt;
+But got...........................: &lt;false&gt;
+automation.amazon.tasks.CheckSortingByPublicationDate.performAs(CheckSortingByPublicationDate.java:36)
+automation.amazon.testcases.amazon.AmazonTCs.User_able_to_sort_results_by_Publish_Date(AmazonTCs.java:50)
+</system-err></testcase><testcase classname="automation.amazon.testcases.amazon.AmazonTCs" name="User only see 16 result items per page"/></testsuite>

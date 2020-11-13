@@ -9,6 +9,7 @@ import net.serenitybdd.junit.runners.SerenityRunner;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.thucydides.core.annotations.Managed;
+import net.thucydides.core.annotations.WhenPageOpens;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
